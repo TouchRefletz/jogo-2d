@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>protótipo de jogo</title>
+</head>
+<body>
+    <div id="onfocus">
+        <p>Clique na tela para jogar.</p>
+    </div>
+    <div class="carregamento">
+        <div class="tela-carregamento">
+            <div class="barra-progresso">
+              <div class="progresso"></div>
+            </div>
+            <div class="porcentagem">0%</div>
+          </div>
+    </div>
+    <div id="menu_default">
+    <div class="menu-inicial" id="menu">
+        <h1 class="title" id="titulo"></h1>
+        <a class="button" onclick="jogar()">jogar</a>
+        <a class="button">configurações</a>
+        <a class="button">sobre</a>
+    </div>
+    <div class="div_personagem" id="div_personagem">
+        <img src="assets/default.gif" alt="personagem do jogo" id="personagem">
+    </div>
+    </div>
+    <main>
+        <img src="messi árabe.jpg" alt="teste de cenário" class="colidir" style="z-index: -1; position: absolute; width: 200px; height: 200px;">
+        <img src="https://png.pngtree.com/png-vector/20220826/ourmid/pngtree-street-sign-png-image_6124668.png" alt="outro teste" style="z-index: -1; position: absolute;">
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
