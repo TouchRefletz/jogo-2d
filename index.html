@@ -21,7 +21,7 @@
     <div id="menu_default">
     <div class="menu-inicial" id="menu">
         <h1 class="title" id="titulo"></h1>
-        <a class="button" onclick="jogar()">jogar</a>
+        <a class="button" id="jogar">jogar</a>
         <a class="button">configurações</a>
         <a class="button">sobre</a>
     </div>
@@ -29,10 +29,26 @@
         <img src="assets/default.gif" alt="personagem do jogo" id="personagem">
     </div>
     </div>
-    <main>
+    <main id="main">
         <img src="messi árabe.jpg" alt="teste de cenário" class="colidir" style="z-index: -1; position: absolute; width: 200px; height: 200px;">
         <img src="https://png.pngtree.com/png-vector/20220826/ourmid/pngtree-street-sign-png-image_6124668.png" alt="outro teste" style="z-index: -1; position: absolute;">
     </main>
-    <script src="app.js"></script>
+    <script type="module" src="js/animações/colocarDefault.js"></script>
+    <script type="module" src="js/animações/trocarAnimacao.js"></script>
+    <script type="module" src="js/html/jogar.js"></script>
+    <script type="module" src="js/localStorage/verificarLogin.js"></script>
+    <script type="module" src="js/movimentacao/andar.js"></script>
+    <script type="module" src="js/movimentacao/carregarPosicao.js"></script>
+    <script type="module" src="js/movimentacao/definirTeclas.js"></script>
+    <script type="module" src="js/movimentacao/naoAndar.js"></script>
+    <script type="module" src="js/movimentacao/pararDeAndar.js"></script>
+    <script type="module" src="js/movimentacao/trigger.js"></script>
+    <script type="module" src="js/colisao.js"></script>
+    <script type="module" src="js/eventListeners.js"></script>
+    <script type="module" src="js/foco.js"></script>
+    <script type="module" src="js/gestaoDoMenu.js"></script>
+    <script type="module" src="js/intro.js"></script>
+    <script type="module" src="js/salvamento.js"></script>
+    <script type="module" src="js/variaveis.js"></script>
 </body>
 </html>

@@ -76,6 +76,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
 }
 
 .menu-inicial {
@@ -94,6 +95,11 @@ main {
 .title {
     font-family: "Nabla", system-ui;    
     animation: title-entry 1s ease-in-out;
+}
+
+.porcentagem {
+  font-family: "Chakra Petch", system-ui;   
+  color: black;
 }
 
 .button {
