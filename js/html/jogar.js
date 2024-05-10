@@ -21,3 +21,4 @@ function jogar() {
         gestaoDeMenu.fadeout(menu, 'n')
     }
 }
+
