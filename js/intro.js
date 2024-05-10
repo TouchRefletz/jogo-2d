@@ -1,6 +1,7 @@
 import * as variaveis from "/js/variaveis.js";
 import * as gestaoDeMenu from "/js/gestaoDoMenu.js";
 import * as verificarLogin from "/js/localStorage/verificarLogin.js";
+import * as menuInicial from "/js/html/menu Inicial.js";
 
 window.addEventListener('load', function() {
     var barraProgresso = document.querySelector('.progresso');
@@ -30,10 +31,10 @@ window.addEventListener('load', function() {
         },(gestaoDeMenu.letras.length * 250) + 2000);
 
         if (!verificarLogin.primeiraVez) {
-            variaveis.menu_padrao.classList.add("menu_default");
-            variaveis.menuinicial.style.backgroundColor = 'rgba(0,0,0,0.5)';
-            variaveis.menuinicial.style.width = '100vw';
-            variaveis.menuinicial.style.position = 'relative';
+          menuInicial.divPrincipalMenuDefault.classList.add('menu_default');
+           menuInicial.divMenuInicial.style.backgroundColor = 'rgba(0,0,0,0.5)';
+            menuInicial.divMenuInicial.style.width = '50vw';
+            menuInicial.divMenuInicial.style.position = 'relative';
             variaveis.div_personagem.style.width = '50vw';
         }
       },1000)

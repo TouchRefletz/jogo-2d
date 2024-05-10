@@ -1,19 +1,20 @@
 import * as variaveis from "/js/variaveis.js";
 import * as gestaoDeMenu from "/js/gestaoDoMenu.js";
 import * as verificarLogin from "/js/localStorage/verificarLogin.js";
+import * as menuInicial from "/js/html/menu Inicial.js";
 
-var botao = document.getElementById("jogar");
-botao.addEventListener("click", jogar);
+menuInicial.playButton.addEventListener("click", jogar);
 
 function jogar() {
     if (!verificarLogin.primeiraVez) {
         setTimeout(() => {
-            variaveis.menuinicial.style.opacity = '0';
+          menuInicial.divMenuInicial.style.opacity = '0';
             setTimeout(() => {
-                variaveis.menuinicial.style.width = '0vh';
+          menuInicial.divMenuInicial.style.width = '0vh';
                 variaveis.div_personagem.style.width = '100vw';
                 setTimeout(() => {
-                    variaveis.menuinicial.style.display = 'none';
+          menuInicial.divMenuInicial.style.display = 'none';
+          menuInicial.removerMenuInicial();
                 },1500)
             },500)
         },1000)
