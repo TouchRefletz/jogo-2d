@@ -1,41 +1,47 @@
+import * as pararDeAndar from "/js/movimentacao/pararDeAndar.js"
+import * as colocarDefault from "/js/animações/colocarDefault.js";
 import * as definirteclas from "/js/movimentacao/definirTeclas.js";
+import * as naoAndar from "/js/movimentacao/naoAndar.js";
+import * as andar from "/js/movimentacao/andar.js";
+import * as trocarAnimacoes from "/js/animações/trocarAnimacao.js";
+import * as salvarPosicoes from "/js/movimentacao/carregarPosicao.js";
 
 export function movimentacao(tecla) {
-    nenhumaTecla = false;
-    padrao = false;
-    if (teclasBaixo.includes(tecla.key) && !travaDown) {
-        solteiTeclaBaixo = false;
-        andarPraBaixo();
-        trocarImagemBaixo();
-        app.teclasClicadas.push(tecla.key);
-        travaDown = true;
+    pararDeAndar.trocarNenhumaTecla(false);
+    colocarDefault.trocarPadrao(false);
+    if (definirteclas.teclasBaixo.includes(tecla.key) && !pararDeAndar.travaDown) {
+        naoAndar.trocarSolteiTeclaBaixo(false);
+        andar.andarPraBaixo();
+        trocarAnimacoes.trocarImagemBaixo();
+        definirteclas.teclasClicadas.push(tecla.key);
+        pararDeAndar.trocarTravaDown(true);
     }
-    if (teclasCima.includes(tecla.key) && !travaUp) {
-        solteiTeclaCima = false;
-        andarPraCima();
-        trocarImagemCima();
-        app.teclasClicadas.push(tecla.key);
-        travaUp = true;
+    if (definirteclas.teclasCima.includes(tecla.key) && !pararDeAndar.travaUp) {
+        naoAndar.trocarSolteiTeclaCima(false);
+        andar.andarPraCima();
+        trocarAnimacoes.trocarImagemCima();
+        definirteclas.teclasClicadas.push(tecla.key);
+        pararDeAndar.trocarTravaUp(true);
     }
-    if (teclasDireita.includes(tecla.key) && !travaRight) {
-        solteiTeclaDireita = false;
-        andarPraDireita();
-        trocarImagemDireita();
-        app.teclasClicadas.push(tecla.key);
-        travaRight = true;
+    if (definirteclas.teclasDireita.includes(tecla.key) && !pararDeAndar.travaRight) {
+        naoAndar.trocarSolteiTeclaDireita(false);
+        andar.andarPraDireita();
+        trocarAnimacoes.trocarImagemDireita();
+        definirteclas.teclasClicadas.push(tecla.key);
+        pararDeAndar.trocarTravaRight(true);
     }
-    if (teclasEsquerda.includes(tecla.key) && !travaLeft) {
-        solteiTeclaEsquerda = false;
-        andarPraEsquerda();
-        trocarImagemEsquerda();
-        app.teclasClicadas.push(tecla.key);
-        travaLeft = true;
+    if (definirteclas.teclasEsquerda.includes(tecla.key) && !pararDeAndar.travaLeft) {
+        naoAndar.trocarSolteiTeclaEsquerda(false);
+        andar.andarPraEsquerda();
+        trocarAnimacoes.trocarImagemEsquerda();
+        definirteclas.teclasClicadas.push(tecla.key);
+        pararDeAndar.trocarTravaLeft(true);
     }
 
     if (tecla.key == 'b') {
-        trocarImagemDanca();
-        teclasClicadas.push(tecla.key);
+        trocarAnimacoes.trocarImagemDanca();
+        definirteclas.teclasClicadas.push(tecla.key);
     }
 
-    atualizarMovimento();
+    salvarPosicoes.atualizarMovimento();
 }

@@ -1,60 +1,65 @@
+import * as definirTeclas from "/js/movimentacao/definirTeclas.js";
+import * as colisao from "/js/colisao.js";
+import * as naoAndar from "/js/movimentacao/naoAndar.js";
+import * as colocarDefault from "/js/animações/colocarDefault.js";
+
 var nenhumaTecla;
-var ultimaAnimacao;
-var travaDown = false;
-var travaUp = false;
-var travaRight = false;
-var travaLeft = false;
+export var ultimaAnimacao;
+export var travaDown = false;
+export var travaUp = false;
+export var travaRight = false;
+export var travaLeft = false;
 
 
 export function nenhumaTeclaClicada(tecla) {
     nenhumaTecla = true;
-    if (teclasBaixo.includes(tecla.key) || colisao.colidindoBaixo) {
-        paraDeAndarPraBaixo();
-            for (var i = 0; i < teclasClicadas.length; i++) {
-                if (teclasClicadas[i] == tecla.key) {
-                    if (teclasClicadas.length == 1) {
-                        ultimaAnimacao = teclasClicadas[i];
+    if (definirTeclas.teclasBaixo.includes(tecla.key) || colisao.colidindoBaixo) {
+        naoAndar.paraDeAndarPraBaixo();
+            for (var i = 0; i < definirTeclas.teclasClicadas.length; i++) {
+                if (definirTeclas.teclasClicadas[i] == tecla.key) {
+                    if (definirTeclas.teclasClicadas.length == 1) {
+                        ultimaAnimacao = definirTeclas.teclasClicadas[i];
                     }
-                    teclasClicadas.splice(i, 1);
+                    definirTeclas.teclasClicadas.splice(i, 1);
                     break;
                 }
             }
         travaDown = false;
     }
-    if (teclasCima.includes(tecla.key) || colisao.colidindoCima) {
-        paraDeAndarPraCima();
-            for (var i = 0; i < teclasClicadas.length; i++) {
-                if (teclasClicadas[i] == tecla.key) {
-                    if (teclasClicadas.length == 1) {
-                        ultimaAnimacao = teclasClicadas[i];
+    if (definirTeclas.teclasCima.includes(tecla.key) || colisao.colidindoCima) {
+        naoAndar.paraDeAndarPraCima();
+            for (var i = 0; i < definirTeclas.teclasClicadas.length; i++) {
+                if (definirTeclas.teclasClicadas[i] == tecla.key) {
+                    if (definirTeclas.teclasClicadas.length == 1) {
+                        ultimaAnimacao = definirTeclas.teclasClicadas[i];
                     }
-                    teclasClicadas.splice(i, 1);
+                    definirTeclas.teclasClicadas.splice(i, 1);
                     break;
                 }
             }
         travaUp = false;
     }
-    if (teclasDireita.includes(tecla.key) || colisao.colidindoDireita) {
-        paraDeAndarPraDireita();
-            for (var i = 0; i < teclasClicadas.length; i++) {
-                if (teclasClicadas[i] == tecla.key) {
-                    if (teclasClicadas.length == 1) {
-                        ultimaAnimacao = teclasClicadas[i];
+    if (definirTeclas.teclasDireita.includes(tecla.key) || colisao.colidindoDireita) {
+        naoAndar.paraDeAndarPraDireita();
+            for (var i = 0; i < definirTeclas.teclasClicadas.length; i++) {
+                if (definirTeclas.teclasClicadas[i] == tecla.key) {
+                    if (definirTeclas.teclasClicadas.length == 1) {
+                        ultimaAnimacao = definirTeclas.teclasClicadas[i];
                     }
-                    teclasClicadas.splice(i, 1);
+                    definirTeclas.teclasClicadas.splice(i, 1);
                     break;
                 }
             }
         travaRight = false;
     }
-    if (teclasEsquerda.includes(tecla.key) || colisao.colidindoEsquerda) {
-        paraDeAndarPraEsquerda();
-            for (var i = 0; i < teclasClicadas.length; i++) {
-                if (teclasClicadas[i] == tecla.key) {
-                    if (teclasClicadas.length == 1) {
-                        ultimaAnimacao = teclasClicadas[i];
+    if (definirTeclas.teclasEsquerda.includes(tecla.key) || colisao.colidindoEsquerda) {
+        naoAndar.paraDeAndarPraEsquerda();
+            for (var i = 0; i < definirTeclas.teclasClicadas.length; i++) {
+                if (definirTeclas.teclasClicadas[i] == tecla.key) {
+                    if (definirTeclas.teclasClicadas.length == 1) {
+                        ultimaAnimacao = definirTeclas.teclasClicadas[i];
                     }
-                    teclasClicadas.splice(i, 1);
+                    definirTeclas.teclasClicadas.splice(i, 1);
                     break;
                 }
             }
@@ -62,15 +67,50 @@ export function nenhumaTeclaClicada(tecla) {
     }
 
     if (tecla.key == 'b') {
-        for (var i = 0; i < teclasClicadas.length; i++) {
-            if (teclasClicadas[i] == tecla.key) {
-                if (teclasClicadas.length == 1) {
-                    ultimaAnimacao = teclasClicadas[i];
+        for (var i = 0; i < definirTeclas.teclasClicadas.length; i++) {
+            if (definirTeclas.teclasClicadas[i] == tecla.key) {
+                if (definirTeclas.teclasClicadas.length == 1) {
+                    ultimaAnimacao = definirTeclas.teclasClicadas[i];
                 }
-                teclasClicadas.splice(i, 1);
+                definirTeclas.teclasClicadas.splice(i, 1);
                 break;
             }
         }
     }
-    controlarAnimacoes();
+    colocarDefault.controlarAnimacoes();
+}
+
+export function trocarNenhumaTecla(conteudo) {
+    if (conteudo == '') {
+        nenhumaTecla = '';
+    }
+    nenhumaTecla = conteudo;
+}
+
+export function trocarTravaUp(conteudo) {
+    if (conteudo == '') {
+        travaUp = '';
+    }
+    travaUp = conteudo;
+}
+
+export function trocarTravaLeft(conteudo) {
+    if (conteudo == '') {
+        travaLeft = '';
+    }
+    travaLeft = conteudo;
+}
+
+export function trocarTravaRight(conteudo) {
+    if (conteudo == '') {
+        travaRight = '';
+    }
+    travaRight = conteudo;
+}
+
+export function trocarTravaDown(conteudo) {
+    if (conteudo == '') {
+        travaDown = '';
+    }
+    travaDown = conteudo;
 }

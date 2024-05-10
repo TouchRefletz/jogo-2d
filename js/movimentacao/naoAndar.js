@@ -1,19 +1,47 @@
 export var solteiTeclaCima = false;
-function paraDeAndarPraCima() {
+export function paraDeAndarPraCima() {
     solteiTeclaCima = true;
 }
 
 export var solteiTeclaBaixo = false;
-function paraDeAndarPraBaixo() {
+export function paraDeAndarPraBaixo() {
     solteiTeclaBaixo = true;
 }
 
 export var solteiTeclaEsquerda = false;
-function paraDeAndarPraEsquerda() {
+export function paraDeAndarPraEsquerda() {
     solteiTeclaEsquerda = true;
 }
 
 export var solteiTeclaDireita = false;
-function paraDeAndarPraDireita() {
+export function paraDeAndarPraDireita() {
     solteiTeclaDireita = true;
+}
+
+export function trocarSolteiTeclaCima(conteudo) {
+    if (conteudo == '') {
+        solteiTeclaCima = '';
+    }
+    solteiTeclaCima = conteudo;
+}
+
+export function trocarSolteiTeclaBaixo(conteudo) {
+    if (conteudo == '') {
+        solteiTeclaBaixo = '';
+    }
+    solteiTeclaBaixo = conteudo;
+}
+
+export function trocarSolteiTeclaEsquerda(conteudo) {
+    if (conteudo == '') {
+        solteiTeclaEsquerda = '';
+    }
+    solteiTeclaEsquerda = conteudo;
+}
+
+export function trocarSolteiTeclaDireita(conteudo) {
+    if (conteudo == '') {
+        solteiTeclaDireita = '';
+    }
+    solteiTeclaDireita = conteudo;
 }

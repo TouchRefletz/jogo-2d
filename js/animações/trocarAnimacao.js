@@ -1,21 +1,21 @@
-function trocarImagemDireita() {
+export function trocarImagemDireita() {
     personagem.src = 'assets/right.gif';
 }
 
-function trocarImagemEsquerda() {
+export function trocarImagemEsquerda() {
     personagem.src = 'assets/left.gif';
 }
 
-function trocarImagemBaixo() {
+export function trocarImagemBaixo() {
     personagem.src = 'assets/down.gif';
 }
 
-function trocarImagemCima() {
+export function trocarImagemCima() {
     personagem.src = 'assets/up.gif';
 }
 
-var travaDanca = false;
-function trocarImagemDanca() {
+export var travaDanca = false;
+export function trocarImagemDanca() {
     if (!travaDanca) {
         personagem.src = 'assets/dance.gif';
         travaDanca = true;
@@ -25,6 +25,6 @@ function trocarImagemDanca() {
     }
 }
 
-function puxarDefault() {
+export function puxarDefault() {
     personagem.src = 'assets/default.gif';
 }

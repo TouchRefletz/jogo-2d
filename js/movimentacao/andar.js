@@ -1,39 +1,44 @@
-function andarPraCima() {
-    cima += andaQuanto;
+import * as variaveis from "/js/variaveis.js";
+import * as alterarVariaveisMovimentacao from '/js/movimentacao/alterarVariaveisPosicao.js';
+import * as naoAndar from "/js/movimentacao/naoAndar.js";
+import * as carregarPosicao from "/js/movimentacao/carregarPosicao.js";
+
+export function andarPraCima() {
+    alterarVariaveisMovimentacao.adicionarCima(variaveis.andaQuanto);
     setTimeout(() => {
-        if (!solteiTeclaCima) {
+        if (!naoAndar.solteiTeclaCima) {
             andarPraCima();
         }
     }, 10);
-    atualizarMovimento();
+    carregarPosicao.atualizarMovimento();
 }
 
-function andarPraBaixo() {
-    cima -= andaQuanto;
+export function andarPraBaixo() {
+    alterarVariaveisMovimentacao.removerCima(variaveis.andaQuanto);
     setTimeout(() => {
-        if (!solteiTeclaBaixo) {
+        if (!naoAndar.solteiTeclaBaixo) {
             andarPraBaixo();
         }
     }, 10);
-    atualizarMovimento();
+    carregarPosicao.atualizarMovimento();
 }
 
-function andarPraEsquerda() {
-    direita += andaQuanto;
+export function andarPraEsquerda() {
+    alterarVariaveisMovimentacao.adicionarDireita(variaveis.andaQuanto);    
     setTimeout(() => {
-        if (!solteiTeclaEsquerda) {
+        if (!naoAndar.solteiTeclaEsquerda) {
             andarPraEsquerda();
         }
     }, 10);
-    atualizarMovimento();
+    carregarPosicao.atualizarMovimento();
 }
 
-function andarPraDireita() {
-    direita -= andaQuanto;
+export function andarPraDireita() {
+    alterarVariaveisMovimentacao.removerDireita(variaveis.andaQuanto);
     setTimeout(() => {
-        if (!solteiTeclaDireita) {
+        if (!naoAndar.solteiTeclaDireita) {
             andarPraDireita();
         }
     }, 10);
-    atualizarMovimento();
+    carregarPosicao.atualizarMovimento();
 }

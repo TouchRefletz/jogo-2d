@@ -1,11 +1,16 @@
+import * as definirTeclas from "/js/movimentacao/definirTeclas.js";
+import * as variaveis from "/js/variaveis.js";
+import * as pararDeAndar from "/js/movimentacao/pararDeAndar.js";
+import * as trocarAnimacoes from "/js/animações/trocarAnimacao.js"
+
 var padraoAtivar = false;
 
-function controlarAnimacoes() {
-    if (teclasClicadas.length === 0) {
+export function controlarAnimacoes() {
+    if (definirTeclas.teclasClicadas.length === 0) {
         colocarPlaceholder();
         padraoAtivar = true;
         setTimeout(() => {
-            if (teclasClicadas.length === 0 && !travaDanca) {
+            if (definirTeclas.teclasClicadas.length === 0 && !trocarAnimacoes.travaDanca) {
                 if (padraoAtivar) {
                     irParaDefault();
                 }
@@ -15,21 +20,28 @@ function controlarAnimacoes() {
 }
 
 function colocarPlaceholder() {
-if (teclasEsquerda.includes(ultimaAnimacao)) {
-personagem.src = 'assets/left-placeholder.png';
-} else if (teclasDireita.includes(ultimaAnimacao)) {
-personagem.src = 'assets/right-placeholder.png';
-} else if (teclasCima.includes(ultimaAnimacao)) {
-personagem.src = 'assets/up-placeholder.png';
-} else if (teclasBaixo.includes(ultimaAnimacao)) {
-personagem.src = 'assets/down-placeholder.png';
+if (definirTeclas.teclasEsquerda.includes(pararDeAndar.ultimaAnimacao)) {
+variaveis.personagem.src = 'assets/left-placeholder.png';
+} else if (definirTeclas.teclasDireita.includes(pararDeAndar.ultimaAnimacao)) {
+variaveis.personagem.src = 'assets/right-placeholder.png';
+} else if (definirTeclas.teclasCima.includes(pararDeAndar.ultimaAnimacao)) {
+variaveis.personagem.src = 'assets/up-placeholder.png';
+} else if (definirTeclas.teclasBaixo.includes(pararDeAndar.ultimaAnimacao)) {
+variaveis.personagem.src = 'assets/down-placeholder.png';
 }
 }
 
-var padrao = false;
+export var padrao = false;
 function irParaDefault() {
-if (!travaDown && !travaLeft && !travaRight && !travaUp && !padrao)
-    puxarDefault();
+if (!pararDeAndar.travaDown && !pararDeAndar.travaLeft && !pararDeAndar.travaRight && !pararDeAndar.travaUp && !padrao)
+    trocarAnimacoes.puxarDefault();
 padrao = true;
 padraoAtivar = false;
+}
+
+export function trocarPadrao(conteudo) {
+    if (conteudo == '') {
+        padrao = '';
+    }
+    padrao = conteudo;
 }

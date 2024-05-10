@@ -1,11 +1,16 @@
+import * as variaveis from "/js/variaveis.js";
+import * as onfocus from "/js/html/onfocus.js";
+
 export function naoEmFoco() {
-    body.style.opacity = '0.5';
-    emfoco.style.display = 'flex';
-    personagem.style.opacity = '0.5';
+    onfocus.createFocus();
+    variaveis.body.style.opacity = '0.5';
+    onfocus.divOnFocus.style.display = 'flex';
+    variaveis.personagem.style.opacity = '0.5';
 }
 
 export function emFoco() {
-    body.style.opacity = '';
-    emfoco.style.display = '';
-    personagem.style.opacity = '';
+    onfocus.deleteFocus();
+    variaveis.body.style.opacity = '';
+    onfocus.divOnFocus.style.display = '';
+    variaveis.personagem.style.opacity = '';
 }
