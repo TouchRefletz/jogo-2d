@@ -20,6 +20,8 @@ export function controlarAnimacoes() {
 }
 
 function colocarPlaceholder() {
+trocarAnimacoes.trocarTravaImagemDireita();
+
 if (definirTeclas.teclasEsquerda.includes(pararDeAndar.ultimaAnimacao)) {
 variaveis.personagem.src = 'assets/left-placeholder.png';
 } else if (definirTeclas.teclasDireita.includes(pararDeAndar.ultimaAnimacao)) {
