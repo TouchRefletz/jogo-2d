@@ -1,40 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>UTOPIA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Teste de movimentação</title>
 </head>
+
 <body>
-    <div class="div_personagem" id="div_personagem">
-        <img src="assets/default.gif" alt="personagem do jogo" id="personagem">
-    </div>
-    <main id="main">
-        <img src="messi árabe.jpg" alt="teste de cenário" class="colidir" style="z-index: -1; position: absolute; width: 200px; height: 200px;">
-        <img src="https://png.pngtree.com/png-vector/20220826/ourmid/pngtree-street-sign-png-image_6124668.png" alt="outro teste" style="z-index: -1; position: absolute;">
-    </main>
-
-
-    <script type="module" src="js/animações/colocarDefault.js"></script>
-    <script type="module" src="js/animações/trocarAnimacao.js"></script>
-    <script type="module" src="js/html/jogar.js"></script>
-    <script type="module" src="js/localStorage/verificarLogin.js"></script>
-    <script type="module" src="js/movimentacao/andar.js"></script>
-    <script type="module" src="js/movimentacao/carregarPosicao.js"></script>
-    <script type="module" src="js/movimentacao/definirTeclas.js"></script>
-    <script type="module" src="js/movimentacao/naoAndar.js"></script>
-    <script type="module" src="js/movimentacao/pararDeAndar.js"></script>
-    <script type="module" src="js/movimentacao/trigger.js"></script>
-    <script type="module" src="js/colisao.js"></script>
-    <script type="module" src="js/eventListeners.js"></script>
-    <script type="module" src="js/foco.js"></script>
-    <script type="module" src="js/gestaoDoMenu.js"></script>
-    <script type="module" src="js/intro.js"></script>
-    <script type="module" src="js/salvamento.js"></script>
-    <script type="module" src="js/variaveis.js"></script>
-    <script type="module" src="js/html/onfocus.js"></script>
-    <script type="module" src="js/html/carregamento.js"></script>
-    <script type="module" src="js/html/menu Inicial.js"></script>
+<div id='personagem'></div>
+<section class="buttons">
+  <div id="cima" class="button">
+    <p>cima</p>
+  </div>
+  <div id="baixo" class="button">
+    <p>baixo</p>
+  </div>
+  <div id="esquerda" class="button">
+    <p>esquerda</p>
+  </div>
+  <div id="direita" class="button">
+    <p>direita</p>
+  </div>
+</section>
 </body>
+
+<script src="app.js"></script>
 </html>
