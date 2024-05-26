@@ -5,7 +5,18 @@
 
 #personagem {
   width: 100px; height: 100px;
-  background-color: red;
+  background-color: rgb(98, 0, 255);
+  position: absolute;
+}
+
+.jogo {
+  width: 100vw;
+  height: 100vh;
+}
+
+#inimigo {
+  width: 100px; height: 100px;
+  background-color: green;
   position: absolute;
 }
 
